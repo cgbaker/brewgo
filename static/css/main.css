@@ -12,8 +12,8 @@ body {
 }
 @media (prefers-color-scheme: dark) {
   body {
-    background: black;
-    color: white;
+    background: rgb(235, 228, 223);
+    color: black;
   }
 }
 .container[role=main] {
@@ -37,11 +37,11 @@ p + p {
 }
 p a {
   /* text-decoration: underline */
-  color: #008AFF;
+  color: rgb(124, 159, 194);
 }
 @media (prefers-color-scheme: dark) {
   p a {
-    color: #50afff;
+    color: rgb(124, 159, 194);
   }
 }
 

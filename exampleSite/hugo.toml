@@ -1,10 +1,10 @@
 baseurl = "https://username.github.io"
 DefaultContentLanguage = "en"
-title = "Beautiful Hugo"
+title = "Hot New Brewery"
 # Using theme as git submodule
-theme = "beautifulhugo"
+theme = "brewgo"
 # Or when using theme as hugo module
-# theme = "github.com/halogenica/beautifulhugo"
+# theme = "github.com/cgbaker/brewgo"
 pygmentsStyle = "trac"
 pygmentsUseClasses = true
 pygmentsCodeFences = true
