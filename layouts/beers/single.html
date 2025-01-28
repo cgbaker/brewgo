@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+
+
+        <div class="splitbox"><div class="left">
+           {{ with .Resources.GetMatch "*.{jpg,png}" }}
+           {{ .RelPermalink }}
+           {{ end }}
+        </div><div class="right">
+           {{ .Content }}
+        </div><div style="clear:both"></div></div>
+
+      </article>
+
+    </div>
+  </div>
+</div>
+{{ end }}

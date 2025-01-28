@@ -1,11 +1,10 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-author: ""
-type: ""
+bjcp_category: "beer"
+bjcp_style: "27A"
 date: {{ .Date }}
-subtitle: ""
-image: ""
+image: "image.jpg"
 tags: []
 ---
 
-this is a beer
+describe beer here
