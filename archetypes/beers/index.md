@@ -1,7 +1,7 @@
 ---
 weight: 0
 params: 
-  title: "{{ replace .Name "-" " " | title }}"
+  name: "{{ replace .Name "-" " " | title }}"
   bjcp_url: "https://www.bjcp.org/style/2021/"
   bjcp_name: "FINISH"
   bjcp_id: "FINISH"
