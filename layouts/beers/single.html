@@ -3,17 +3,51 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-
-
         <div class="splitbox"><div class="left">
            {{ with .Resources.GetMatch "*.{jpg,png}" }}
-           {{ .RelPermalink }}
+            <img class="beer-img" src="{{ .RelPermalink }}" alt="{{ .Title }}"/>
            {{ end }}
         </div><div class="right">
+           <div class="beer-name">{{ .Params.name }}</div>
+           <div class="beer-category">{{ .Params.bjcp_name }}</div>
+           {{ if .Params.bjcp_url }}
+           <a href="{{ .Params.bjcp_url }}">BJCP Category {{ .Params.bjcp_id }}</a>
+           {{ end }}
            {{ .Content }}
+           <table class="beer-info">
+             <tr class="beer-info">
+               <th class="beer-info">ABV</th>
+               <th class="beer-info">IBUs</th>
+               <th class="beer-info">OG</th>
+               <th class="beer-info">FG</th>
+             </tr>
+             <tr class="beer-info">
+               <td class="beer-info">{{ .Params.abv }}</td>
+               <td class="beer-info">{{ .Params.ibus }}</td>
+               <td class="beer-info">{{ .Params.og }}</td>
+               <td class="beer-info">{{ .Params.fg }}</td>
+             </tr>
+           </table>
         </div><div style="clear:both"></div></div>
 
       </article>
+
+<!--
+      {{ if ne .Type "page" }}
+        <ul class="pager blog-pager">
+          {{ if .PrevInSection }}
+            <li class="previous">
+              <a href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">&larr; {{ i18n "previousPost" }}</a>
+            </li>
+          {{ end }}
+          {{ if .NextInSection }}
+            <li class="next">
+              <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">{{ i18n "nextPost" }} &rarr;</a>
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+-->
 
     </div>
   </div>

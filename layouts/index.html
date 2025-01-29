@@ -8,12 +8,14 @@
           </div>
         {{ end }}
 
+<!--
         <div class="posts-list">
           {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
           {{ range $pag.Pages }}
             {{ partial "post_preview" . }}
           {{ end }}
         </div>
+-->
 
         {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
           <ul class="pager main-pager">
