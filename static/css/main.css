@@ -374,6 +374,17 @@ footer div.disclaimer {
   color: #0085a1;
 }
 
+.beer-name {
+  font-size: 34px;
+}
+.beer-category {
+  font-size: 20px;
+  font-style: italic;
+}
+.bjcp-url {
+  font-size: 16px;
+  font-style: normal;
+}
 .post-preview .post-title {
   font-size: 30px;
   margin-top: 0;
@@ -521,7 +532,7 @@ footer div.disclaimer {
 }
 .intro-header .page-heading,
 .intro-header .tags-heading,
-.intro-header .categories-heading {
+.intro-header .categories-heading, .beers-heading {
   text-align: center;
 }
 .intro-header.big-img .page-heading,
@@ -532,6 +543,7 @@ footer div.disclaimer {
 }
 .intro-header .page-heading h1,
 .intro-header .tags-heading h1,
+.intro-header .beers-heading h1,
 .intro-header .categories-heading h1 {
   margin-top: 0;
   font-size: 50px;
@@ -588,6 +600,7 @@ footer div.disclaimer {
   }
   .intro-header .page-heading h1,
   .intro-header .tags-heading h1,
+  .intro-header .beers-heading h1,
   .intro-header .categories-heading h1 {
     font-size: 80px;
   }
@@ -717,6 +730,9 @@ table tr td {
   text-align: center;
   border-top: 1px solid #cccccc;
   background-color: #eeeeee;
+  padding: 5px 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 table tr th :first-child,
 table tr td :first-child {

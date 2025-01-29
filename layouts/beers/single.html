@@ -1,8 +1,8 @@
 {{ define "main" }}
 <div class="container" role="main">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <article role="main" class="blog-post">
+    <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-0">
+      <article role="main">
         <div class="splitbox"><div class="left">
            {{ with .Resources.GetMatch "*.{jpg,png}" }}
             <img class="beer-img" src="{{ .RelPermalink }}" alt="{{ .Title }}"/>
@@ -11,9 +11,11 @@
            <div class="beer-name">{{ .Params.name }}</div>
            <div class="beer-category">{{ .Params.bjcp_name }}</div>
            {{ if .Params.bjcp_url }}
-           <a href="{{ .Params.bjcp_url }}">BJCP Category {{ .Params.bjcp_id }}</a>
+	     <div class="bjcp-url">
+               <a href="{{ .Params.bjcp_url }}">BJCP Category {{ .Params.bjcp_id }}</a>
+             </div>
            {{ end }}
-           {{ .Content }}
+           <center>
            <table class="beer-info">
              <tr class="beer-info">
                <th class="beer-info">ABV</th>
@@ -28,6 +30,8 @@
                <td class="beer-info">{{ .Params.fg }}</td>
              </tr>
            </table>
+           <center>
+           {{ .Content }}
         </div><div style="clear:both"></div></div>
 
       </article>
