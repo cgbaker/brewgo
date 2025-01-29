@@ -1,10 +1,14 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-bjcp_category: "beer"
-bjcp_style: "27A"
-date: {{ .Date }}
-image: "image.jpg"
-tags: []
+weight: 0
+params: 
+  title: "{{ replace .Name "-" " " | title }}"
+  bjcp_url: "https://www.bjcp.org/style/2021/"
+  bjcp_name: "FINISH"
+  bjcp_id: "FINISH"
+  og: 1.000
+  fg: 1.000
+  ibus: 0
+  abv: 0
 ---
 
-describe beer here
+*Add description*
