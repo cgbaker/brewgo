@@ -13,8 +13,8 @@
           {{ range .Pages }}
             <li>
 	      <a href="{{ .Permalink }}">
-                {{ .Params.name }}
-              </a> - {{ .Params.bjcp_name }} 
+                <b>{{ .Params.name }}</b>
+              </a> - {{ .Params.bjcp_name }} - {{.Params.abv }}% <i>abv</i>
             </li>
           {{ end }}
         </ul>
