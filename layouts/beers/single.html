@@ -8,7 +8,7 @@
             <img class="beer-img" src="{{ .RelPermalink }}" alt="{{ .Title }}"/>
            {{ end }}
         </div><div class="right">
-           <div class="beer-name">{{ .Params.name }}</div>
+           <div class="beer-name">{{ .Title }}</div>
            <div class="beer-category">{{ .Params.bjcp_name }}</div>
            {{ if .Params.bjcp_url }}
 	     <div class="bjcp-url">
