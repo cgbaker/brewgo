@@ -769,23 +769,38 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
 }
 
 /* IPython split style */
-div.splitbox {width:100%; overflow:auto;}
+div.splitbox {
+  width: 100%;
+  overflow: auto;
+  display: flex; /* Make it a flex container */
+  align-items: center; /* Vertically center items */
+}
 
 div.splitbox div.left {
-               width:48%;
-               float:left;}
+  width: 50%;
+}
+
 div.splitbox div.right {
-               width:48%;
-               float:right;}
+  width: 50%;
+}
 
 @media only screen and (max-width: 600px) {
-div.splitbox div.left {
-               width:100%;
-               float:left;}
-div.splitbox div.right {
-               width:100%;
-               float:left;}
+  div.splitbox {
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+  }
+
+  div.splitbox div.left {
+    width: 100%;
+    display: flex; /* Make the left div a flex box */
+    justify-content: center;
+
+  }
+
+  div.splitbox div.right {
+    width: 100%;
+  }
 }
+
 
 /* Delayed Disqus */
 .disqus-comments button {
