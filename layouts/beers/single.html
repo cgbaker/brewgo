@@ -5,7 +5,7 @@
       <article role="main">
         <div class="splitbox"><div class="left">
            {{ with .Resources.GetMatch "*.{jpg,png}" }}
-            <img class="beer-img" src="{{ .RelPermalink }}" alt="{{ .Title }}"/>
+            <img width=80% class="beer-img" src="{{ .RelPermalink }}" alt="{{ .Title }}"/>
            {{ end }}
         </div><div class="right">
            <div class="beer-name">{{ .Title }}</div>
@@ -30,9 +30,9 @@
                <td class="beer-info">{{ .Params.fg }}</td>
              </tr>
            </table>
-           <center>
+           </center>
            {{ .Content }}
-        </div><div style="clear:both"></div></div>
+        </div></div>
 
       </article>
 

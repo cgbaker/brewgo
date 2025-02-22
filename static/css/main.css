@@ -777,11 +777,11 @@ div.splitbox {
 }
 
 div.splitbox div.left {
-  width: 50%;
+  width: 48%;
 }
 
 div.splitbox div.right {
-  width: 50%;
+  width: 48%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -793,7 +793,6 @@ div.splitbox div.right {
     width: 100%;
     display: flex; /* Make the left div a flex box */
     justify-content: center;
-
   }
 
   div.splitbox div.right {
