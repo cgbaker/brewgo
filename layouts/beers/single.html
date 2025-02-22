@@ -36,22 +36,18 @@
 
       </article>
 
-<!--
-      {{ if ne .Type "page" }}
-        <ul class="pager blog-pager">
-          {{ if .PrevInSection }}
-            <li class="previous">
-              <a href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">&larr; {{ i18n "previousPost" }}</a>
-            </li>
-          {{ end }}
-          {{ if .NextInSection }}
-            <li class="next">
-              <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">{{ i18n "nextPost" }} &rarr;</a>
-            </li>
-          {{ end }}
-        </ul>
-      {{ end }}
--->
+      <ul class="pager blog-pager">
+        {{ if .NextInSection }}
+          <li class="previous">
+            <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">Prev: {{ .NextInSection.Title }}</a>
+          </li>
+        {{ end }}
+        {{ if .PrevInSection }}
+          <li class="next">
+            <a href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">Next: {{ .PrevInSection.Title }}</a>
+          </li>
+        {{ end }}
+      </ul>
 
     </div>
   </div>
