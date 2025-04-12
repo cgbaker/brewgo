@@ -31,7 +31,22 @@
              </tr>
            </table>
            </center>
+           <hr>
            {{ .Content }}
+
+           {{ with .Params.awards }}
+            <hr>
+            <div class="awards">Awards</div>
+            {{ range .gold }}
+            <div><i class="fa-solid fa-medal" style="color: #FFD700;"></i> {{ . }}</div>
+            {{ end }}
+            {{ range .silver }}
+            <div><i class="fa-solid fa-medal" style="color: #C0C0C0;"></i> {{ . }}</div>
+            {{ end }}
+            {{ range .bronze }}
+            <div><i class="fa-solid fa-medal" style="color: #CD7F32;"></i> {{ . }}</div>
+            {{ end }}
+           {{ end }}
         </div></div>
 
       </article>

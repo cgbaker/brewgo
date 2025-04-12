@@ -379,6 +379,11 @@ footer div.disclaimer {
   color: #0085a1;
 }
 
+.awards {
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .beer-name {
   font-size: 34px;
 }
