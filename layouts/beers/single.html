@@ -34,6 +34,16 @@
            <hr>
            {{ .Content }}
 
+           {{ if .Params.festivals }}
+            <hr>
+            <div class="awards">Festival Appearances</div>
+	    <ul>
+            {{ range .Params.festivals }}
+	    <li>{{ . }}
+            {{ end }}
+	    </ul>
+           {{ end }}
+	   
            {{ with .Params.awards }}
             <hr>
             <div class="awards">Awards</div>
