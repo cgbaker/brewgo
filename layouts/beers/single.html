@@ -15,6 +15,9 @@
                <a href="{{ .Params.bjcp_url }}">BJCP Category {{ .Params.bjcp_id }}</a>
              </div>
            {{ end }}
+	   {{ with .Params.untappd }}
+	   <a href="{{.}}"><i class="fab fa-untappd"></i> UNTAPPD</a>
+	   {{ end }}
            <center>
            <table class="beer-info">
              <tr class="beer-info">

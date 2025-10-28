@@ -17,6 +17,12 @@ title = "GitHub"
 icon = "fab fa-github"
 
 [[social_icons]]
+id = "untappd"
+url = "https://untappd.com/%s"
+title = "Untappd"
+icon = "fab fa-untappd"
+
+[[social_icons]]
 id = "gitlab"
 url = "https://gitlab.com/%s"
 title = "GitLab"
