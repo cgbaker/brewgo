@@ -1,3 +1,13 @@
+/* --- Custom Color Properties --- */
+
+:root {
+  --midnight: #0f0b51;
+  --flame-point: #fc7010;
+  --soft-ember: #fca804;
+  --pale-ale: #ffe9bf;
+  --foam: #ffffff;
+}
+
 /* --- General --- */
 
 body {
@@ -5,7 +15,7 @@ body {
   font-size: 18px;
   color: #404040;
   position: relative;
-  background: #FFF;
+  background: var(--foam);
   display: flex;
   flex-flow: column;
   height: 100vh;
@@ -133,14 +143,15 @@ img {
 /* --- Navbar --- */
 
 .navbar-custom {
-  background: rgb(189, 131, 80);
+  background: var(--midnight);
   border-bottom: 1px solid #000000;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .navbar-custom .nav li a {
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
@@ -148,10 +159,25 @@ img {
   font-size: 22px;
 }
 
+.navbar-logo {
+  height: 60px;
+  display: inline-block;
+  margin-top: -20px;
+  margin-left: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar-logo {
+    height: 40px;
+    margin-top: -10px;
+    margin-left: 10px;
+  }
+}
+
 .navbar-custom .navbar-brand,
 .navbar-custom .nav li a {
   font-weight: 800;
-  color: #404040;
+  color: var(--foam);
 }
 
 
@@ -159,8 +185,7 @@ img {
 .navbar-custom .navbar-brand:focus ,
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
-  // color: #0085a1;
-  color: rgb(45, 29, 16);
+  color: var(--soft-ember);
 }
 
 .navbar-custom .navbar-brand-logo {
@@ -301,7 +326,7 @@ img {
 
 footer {
   padding: 30px 0;
-  background: rgb(189, 131, 80);
+  background: var(--midnight);
   border-top: 1px #000000 solid;
   margin-top: auto;
   font-size: 14px;
