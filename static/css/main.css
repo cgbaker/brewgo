@@ -414,9 +414,14 @@ footer div.disclaimer {
   color: #0085a1;
 }
 
-.awards {
+.awards h3 {
   font-size: 18px;
   font-weight: bold;
+}
+@media only screen and (max-width: 600px) {
+  .awards {
+    text-align: left;
+  }
 }
 
 .beer-name {
@@ -561,6 +566,26 @@ footer div.disclaimer {
   margin-top: 51px; /* The small navbar is 50px tall + 1px border */
   margin-bottom: 35px;
 }
+.intro-header.big-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.60); /* opacity-style darkening */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px); /* Safari */
+  pointer-events: none;
+  z-index: 0;
+}
+.intro-header.big-img .container,
+.intro-header.big-img .page-heading,
+.intro-header.big-img .beers-heading,
+.intro-header.big-img .post-heading {
+  position: relative;
+  z-index: 1; /* keep text above the blurred overlay */
+}
 .intro-header.big-img  .big-img-transition {
   position: absolute;
   width: 100%;
@@ -584,7 +609,7 @@ footer div.disclaimer {
 .intro-header.big-img .page-heading,
 .intro-header.big-img .beers-heading,
 .intro-header.big-img .post-heading {
-  padding: 100px 0;
+  padding: 30px 0;
   color: #FFF;
   text-shadow: 1px 1px 3px #000;
 }
@@ -657,7 +682,7 @@ footer div.disclaimer {
   .intro-header.big-img .page-heading,
   .intro-header.big-img .beers-heading,
   .intro-header.big-img .post-heading  {
-    padding: 150px 0;
+    padding: 50px 0;
   }
   .intro-header .page-heading h1,
   .intro-header .beers-heading h1,
@@ -788,6 +813,7 @@ table tr td {
   margin: 0;
   padding: 6px 13px;
 }
+
 .beer-info {
   text-align: center;
   border-top: 1px solid #cccccc;
@@ -796,6 +822,13 @@ table tr td {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+@media only screen and (max-width: 600px) {
+  .beer-info {
+    margin: auto;
+  }
+}
+
+
 table tr th :first-child,
 table tr td :first-child {
   margin-top: 0;

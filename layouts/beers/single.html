@@ -8,7 +8,7 @@
             <img width=80% class="beer-img" src="{{ .RelPermalink }}" alt="{{ .Title }}"/>
            {{ end }}
         </div><div class="right">
-           <div class="beer-name">{{ .Title }}</div>
+           <!-- <div class="beer-name">{{ .Title }}</div> -->
            <div class="beer-category">{{ .Params.bjcp_name }}</div>
            {{ if .Params.bjcp_url }}
 	     <div class="bjcp-url">
@@ -18,7 +18,6 @@
 	   {{ with .Params.untappd }}
 	   <a href="{{.}}"><i class="fab fa-untappd"></i> UNTAPPD</a>
 	   {{ end }}
-           <center>
            <table class="beer-info">
              <tr class="beer-info">
                <th class="beer-info">ABV</th>
@@ -33,19 +32,19 @@
                <td class="beer-info">{{ .Params.fg }}</td>
              </tr>
            </table>
-           </center>
            <hr>
            {{ .Content }}
 
            {{ if .Params.festivals }}
             <hr>
-            <div class="awards">Festival Appearances</div>
-	    <ul>
-            {{ range .Params.festivals }}
-	    <li>{{ . }}
-            {{ end }}
-	    </ul>
-           {{ end }}
+            <div class="awards">
+              <h3>Festival Appearances</h3>
+            <ul class="awards-list">
+              {{ range .Params.festivals }}
+              <li>{{ . }}
+                {{ end }}
+            </ul></div>
+          {{ end }}
 	   
            {{ with .Params.awards }}
             <hr>
