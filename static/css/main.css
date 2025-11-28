@@ -18,6 +18,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Birthstone';
+  src: url('/fonts/birthstone.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* --- General --- */
 
 body {
@@ -629,7 +637,7 @@ footer div.disclaimer {
 .intro-header .tags-heading h1,
 .intro-header .categories-heading h1,
 .intro-header .post-heading h1 {
-  font-family: 'Dh Kelia', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Dh Kelia', 'Birthstone', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400; /* Regular */
   letter-spacing: 0; /* 0 pts letter spacing */
   line-height: 1; /* Equivalent to 1pt line spacing in design tools */
