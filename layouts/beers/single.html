@@ -50,13 +50,13 @@
             <hr>
             <div class="awards">Awards</div>
             {{ range .gold }}
-            <div><i class="fa-solid fa-medal" style="color: #FFD700;"></i> {{ . }}</div>
+            <div><i class="fa-solid fa-medal" title="Gold Medal" style="color: #FFD700;"></i> {{ . }}</div>
             {{ end }}
             {{ range .silver }}
-            <div><i class="fa-solid fa-medal" style="color: #C0C0C0;"></i> {{ . }}</div>
+            <div><i class="fa-solid fa-medal" title="Silver Medal" style="color: #C0C0C0;"></i> {{ . }}</div>
             {{ end }}
             {{ range .bronze }}
-            <div><i class="fa-solid fa-medal" style="color: #CD7F32;"></i> {{ . }}</div>
+            <div><i class="fa-solid fa-medal" title="Bronze Medal" style="color: #CD7F32;"></i> {{ . }}</div>
             {{ end }}
            {{ end }}
         </div></div>
