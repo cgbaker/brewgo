@@ -8,6 +8,16 @@
   --foam: #ffffff;
 }
 
+/* --- Custom Fonts --- */
+
+@font-face {
+  font-family: 'Dh Kelia';
+  src: url('/fonts/dh-kellia.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* --- General --- */
 
 body {
@@ -567,18 +577,20 @@ footer div.disclaimer {
 }
 .intro-header .page-heading,
 .intro-header .tags-heading,
-.intro-header .categories-heading, .beers-heading {
+.intro-header .beers-heading,
+.intro-header .categories-heading {
   text-align: center;
 }
 .intro-header.big-img .page-heading,
+.intro-header.big-img .beers-heading,
 .intro-header.big-img .post-heading {
   padding: 100px 0;
   color: #FFF;
   text-shadow: 1px 1px 3px #000;
 }
 .intro-header .page-heading h1,
-.intro-header .tags-heading h1,
 .intro-header .beers-heading h1,
+.intro-header .tags-heading h1,
 .intro-header .categories-heading h1 {
   margin-top: 0;
   font-size: 50px;
@@ -587,7 +599,18 @@ footer div.disclaimer {
   margin-top: 0;
   font-size: 35px;
 }
+.intro-header .page-heading h1,
+.intro-header .beers-heading h1,
+.intro-header .tags-heading h1,
+.intro-header .categories-heading h1,
+.intro-header .post-heading h1 {
+  font-family: 'Dh Kelia', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400; /* Regular */
+  letter-spacing: 0; /* 0 pts letter spacing */
+  line-height: 1; /* Equivalent to 1pt line spacing in design tools */
+}
 .intro-header .page-heading .page-subheading,
+.intro-header .beers-heading .beers-subheading,
 .intro-header .post-heading .post-subheading {
   font-size: 27px;
   line-height: 1.1;
@@ -600,10 +623,12 @@ footer div.disclaimer {
   margin-bottom: 20px;
 }
 .intro-header.big-img .page-heading .page-subheading,
+.intro-header.big-img .beers-heading .beers-subheading,
 .intro-header.big-img .post-heading .post-subheading {
   font-weight: 400;
 }
-.intro-header.big-img .page-heading hr {
+.intro-header.big-img .page-heading hr,
+.intro-header.big-img .beers-heading hr {
   box-shadow: 1px 1px 3px #000;
   -webkit-box-shadow: 1px 1px 3px #000;
   -moz-box-shadow: 1px 1px 3px #000;
@@ -630,12 +655,13 @@ footer div.disclaimer {
     margin-top: 91px;  /* Full navbar is small navbar + 20px padding on each side when expanded */
   }
   .intro-header.big-img .page-heading,
+  .intro-header.big-img .beers-heading,
   .intro-header.big-img .post-heading  {
     padding: 150px 0;
   }
   .intro-header .page-heading h1,
-  .intro-header .tags-heading h1,
   .intro-header .beers-heading h1,
+  .intro-header .tags-heading h1,
   .intro-header .categories-heading h1 {
     font-size: 80px;
   }
@@ -667,6 +693,7 @@ footer div.disclaimer {
     height: 220px;
   }
   .intro-header.big-img .page-heading,
+  .intro-header.big-img .beers-heading,
   .intro-header.big-img .post-heading {
     display: none;
   }
