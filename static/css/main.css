@@ -41,18 +41,18 @@ p + p {
 }
 p a {
   /* text-decoration: underline */
-  color: rgb(124, 159, 194);
+  color: var(--soft-ember);
 }
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
 }
 a {
-  color: color(124, 159, 194);
+  color: var(--soft-ember);
 }
 a:hover,
 a:focus {
-  color: color(110, 137, 166);
+  color: var(--flame-point);
 }
 blockquote {
   color: #808080;
@@ -333,7 +333,7 @@ footer {
 }
 
 footer a {
-  color: #111111;
+  color: var(--soft-ember);
 }
 
 footer .list-inline {

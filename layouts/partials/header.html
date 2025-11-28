@@ -1,19 +1,16 @@
 {{- partial "load-photoswipe-theme.html" . }}
 
 {{ if .IsHome }}
-  {{ if .Site.Params.homeTitle }}{{ $.Scratch.Set "title" .Site.Params.homeTitle }}{{ else }}{{ $.Scratch.Set "title" .Site.Title }}{{ end }}
-  {{ if .Site.Params.subtitle }}{{ $.Scratch.Set "subtitle" .Site.Params.subtitle }}{{ end }}
-  {{ if .Site.Params.bigimg }}{{ $.Scratch.Set "bigimg" .Site.Params.bigimg }}{{ end }}
+  <div class="intro-header"></div>
 {{ else }}
   {{ $.Scratch.Set "title" .Title }}
   {{ if .Params.subtitle }}{{ $.Scratch.Set "subtitle" .Params.subtitle }}{{ end }}
   {{ if .Params.bigimg }}{{ $.Scratch.Set "bigimg" .Params.bigimg }}{{ end }}
-{{ end }}
-{{ $bigimg := $.Scratch.Get "bigimg" }}
-{{ $title := $.Scratch.Get "title" }}
-{{ $subtitle := $.Scratch.Get "subtitle" }}
+  {{ $bigimg := $.Scratch.Get "bigimg" }}
+  {{ $title := $.Scratch.Get "title" }}
+  {{ $subtitle := $.Scratch.Get "subtitle" }}
 
-{{ if or $bigimg $title }}
+  {{ if or $bigimg $title }}
   {{ if $bigimg }}
     <div id="header-big-imgs" data-num-img={{len $bigimg}}
       {{range $i, $img := $bigimg}}
@@ -87,4 +84,5 @@
   </header>
 {{ else }}
   <div class="intro-header"></div>
+{{ end }}
 {{ end }}
