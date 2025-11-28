@@ -827,6 +827,7 @@ div.splitbox div.right {
 
   div.splitbox div.right {
     width: 100%;
+    text-align: center;
   }
 }
 
