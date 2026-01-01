@@ -5,22 +5,28 @@ title = "Email me"
 icon = "fas fa-envelope"
 
 [[social_icons]]
+id = "instagram"
+url = "https://www.instagram.com/%s"
+title = "Instagram"
+icon = "fab fa-instagram"
+
+[[social_icons]]
 id = "facebook"
 url = "https://www.facebook.com/%s"
 title = "Facebook"
 icon = "fab fa-facebook"
 
 [[social_icons]]
-id = "github"
-url = "https://github.com/%s"
-title = "GitHub"
-icon = "fab fa-github"
-
-[[social_icons]]
 id = "untappd"
 url = "https://untappd.com/%s"
 title = "Untappd"
 icon = "fab fa-untappd"
+
+[[social_icons]]
+id = "github"
+url = "https://github.com/%s"
+title = "GitHub"
+icon = "fab fa-github"
 
 [[social_icons]]
 id = "gitlab"
@@ -75,12 +81,6 @@ id = "snapchat"
 url = "https://www.snapchat.com/add/%s"
 title = "Snapchat"
 icon = "fab fa-snapchat-ghost"
-
-[[social_icons]]
-id = "instagram"
-url = "https://www.instagram.com/%s"
-title = "Instagram"
-icon = "fab fa-instagram"
 
 [[social_icons]]
 id = "youtube"
