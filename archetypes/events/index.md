@@ -10,6 +10,7 @@ params:
   ticket_price: "Free"
   organizer: ""
   organizer_url: ""
+  image: ""
   beers: []
   recap: false
 ---

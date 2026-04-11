@@ -7,6 +7,10 @@
         <div class="splitbox"><div class="left">
           {{ with .Resources.GetMatch "*.{jpg,png}" }}
             <img width="80%" class="beer-img" src="{{ .RelPermalink }}" alt="{{ $.Title }} logo" />
+          {{ else }}
+            {{ with $.Params.image }}
+              <img width="80%" class="beer-img" src="{{ . }}" alt="{{ $.Title }} logo" />
+            {{ end }}
           {{ end }}
         </div><div class="right">
 
