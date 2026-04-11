@@ -45,7 +45,7 @@
                 {{ end }}
             </ul></div>
           {{ end }}
-	   
+
            {{ with .Params.awards }}
             <hr>
             <div class="awards">Awards</div>
@@ -59,6 +59,30 @@
             <div><i class="fa-solid fa-medal" title="Bronze Medal" style="color: #CD7F32;"></i> {{ . }}</div>
             {{ end }}
            {{ end }}
+
+           {{ $beerSlug := .File.BaseFileName }}
+           {{ $beerEvents := slice }}
+           {{ range site.Sections }}
+             {{ if eq .Section "events" }}
+               {{ range .RegularPages }}
+                 {{ if in .Params.beers $beerSlug }}
+                   {{ $beerEvents = $beerEvents | append . }}
+                 {{ end }}
+               {{ end }}
+             {{ end }}
+           {{ end }}
+           {{ with $beerEvents }}
+            <hr>
+            <div class="awards">
+              <h3>Event Appearances</h3>
+              <ul class="awards-list">
+                {{ range sort . "Date" "desc" }}
+                  <li><a href="{{ .Permalink }}">{{ .Title }}</a> — {{ .Date.Format "January 2, 2006" }}</li>
+                {{ end }}
+              </ul>
+            </div>
+           {{ end }}
+
         </div></div>
 
       </article>

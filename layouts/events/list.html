@@ -1,0 +1,43 @@
+{{ define "main" }}
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      {{ with .Content }}
+        <div class="well">{{ . }}</div>
+      {{ end }}
+
+      {{ $now := now }}
+      {{ $upcoming := where .Pages "Date" "ge" $now }}
+      {{ $past := where .Pages "Date" "lt" $now }}
+
+      {{ with $upcoming }}
+        <h2>Upcoming Events</h2>
+        <ul class="posts-list">
+          {{ range sort . "Date" "asc" }}
+            <li>
+              <a href="{{ .Permalink }}"><b>{{ .Title }}</b></a>
+              — {{ .Date.Format "January 2, 2006" }}
+              {{ with .Params.location }} · {{ . }}{{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+
+      {{ with $past }}
+        <h2>Past Events</h2>
+        <ul class="posts-list">
+          {{ range sort . "Date" "desc" }}
+            <li>
+              <a href="{{ .Permalink }}"><b>{{ .Title }}</b></a>
+              — {{ .Date.Format "January 2, 2006" }}
+              {{ with .Params.location }} · {{ . }}{{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+
+    </div>
+  </div>
+</div>
+{{ end }}
