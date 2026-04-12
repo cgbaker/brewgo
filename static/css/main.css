@@ -1002,3 +1002,11 @@ h4.see-also {
   font-size: 1.2rem;
 }
 
+@media only screen and (max-width: 500px) {
+  .next-event-widget {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
