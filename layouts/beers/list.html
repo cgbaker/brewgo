@@ -1,13 +1,11 @@
 {{ define "main" }}
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-        {{ with .Content }}
-          <div class="well">
-            {{.}}
-          </div>
-        {{ end }}
+      {{ with .Content }}
+        <div class="well">{{.}}</div>
+      {{ end }}
 
         <ul class="posts-list">
           {{ range .Pages }}
@@ -19,7 +17,7 @@
           {{ end }}
         </ul>
 
-      </div>
     </div>
   </div>
+</div>
 {{ end }}

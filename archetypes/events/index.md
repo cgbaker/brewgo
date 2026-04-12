@@ -1,15 +1,11 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
 params:
-  event_time: "TBD"
+  date: "{{ .Date.Format "2006-01-02" }}"
   location: ""
-  location_url: ""
-  event_type: "beer festival"
-  ticket_url: ""
-  ticket_price: "Free"
-  organizer: ""
-  organizer_url: ""
+  event_url: ""
+  charity: ""
+  charity_url: ""
   image: ""
   beers: []
   recap: false

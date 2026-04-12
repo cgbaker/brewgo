@@ -4,21 +4,27 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
       {{ with .Content }}
-        <div class="well">{{ . }}</div>
+        <div class="well">{{.}}</div>
       {{ end }}
 
       {{ $now := now }}
-      {{ $upcoming := where .Pages "Date" "ge" $now }}
-      {{ $past := where .Pages "Date" "lt" $now }}
+      {{ $upcoming := slice }}
+      {{ $past := slice }}
+      {{ range .Pages }}
+        {{ $eventDate := time .Params.date }}
+        {{ if $eventDate.After $now }}
+          {{ $upcoming = $upcoming | append . }}
+        {{ else }}
+          {{ $past = $past | append . }}
+        {{ end }}
+      {{ end }}
 
       {{ with $upcoming }}
         <h2>Upcoming Events</h2>
         <ul class="posts-list">
-          {{ range sort . "Date" "asc" }}
+          {{ range sort . "Params.date" "asc" }}
             <li>
-              <a href="{{ .Permalink }}"><b>{{ .Title }}</b></a>
-              — {{ .Date.Format "January 2, 2006" }}
-              {{ with .Params.location }} · {{ . }}{{ end }}
+              {{ with .Params.event_url }}<a href="{{ . }}">{{ else }}<a href="{{ .Permalink }}">{{ end }}<b>{{ .Title }}</b></a> — {{ (time .Params.date).Format "Jan 2, 2006" }}
             </li>
           {{ end }}
         </ul>
@@ -27,11 +33,9 @@
       {{ with $past }}
         <h2>Past Events</h2>
         <ul class="posts-list">
-          {{ range sort . "Date" "desc" }}
+          {{ range sort . "Params.date" "desc" }}
             <li>
-              <a href="{{ .Permalink }}"><b>{{ .Title }}</b></a>
-              — {{ .Date.Format "January 2, 2006" }}
-              {{ with .Params.location }} · {{ . }}{{ end }}
+              <a href="{{ .Permalink }}"><b>{{ .Title }}</b></a> — {{ (time .Params.date).Format "Jan 2, 2006" }}
             </li>
           {{ end }}
         </ul>

@@ -14,65 +14,48 @@
           {{ end }}
         </div><div class="right">
 
-          <div class="beer-category">{{ .Params.event_type | title }}</div>
-
-          <table class="beer-info">
-            <tr class="beer-info">
-              <th class="beer-info">Date</th>
-              <th class="beer-info">Time</th>
-            </tr>
-            <tr class="beer-info">
-              <td class="beer-info">{{ .Date.Format "January 2, 2006" }}</td>
-              <td class="beer-info">{{ .Params.event_time }}</td>
-            </tr>
-          </table>
+          <div class="beer-category">{{ (time .Params.date).Format "January 2, 2006" }}</div>
 
           {{ with .Params.location }}
-            <p>
-              {{ if $.Params.location_url }}
-                <a href="{{ $.Params.location_url }}">{{ . }}</a>
+            <p>{{ . }}</p>
+          {{ end }}
+
+          {{ with .Params.event_url }}
+            <p><a href="{{ . }}">{{ . }}</a></p>
+          {{ end }}
+
+          {{ with .Params.charity }}
+            <p>Benefiting
+              {{ if $.Params.charity_url }}
+                <a href="{{ $.Params.charity_url }}">{{ . }}</a>
               {{ else }}
                 {{ . }}
               {{ end }}
             </p>
-          {{ end }}
-
-          {{ with .Params.organizer }}
-            <p>Organized by:
-              {{ if $.Params.organizer_url }}
-                <a href="{{ $.Params.organizer_url }}">{{ . }}</a>
-              {{ else }}
-                {{ . }}
-              {{ end }}
-            </p>
-          {{ end }}
-
-          {{ with .Params.ticket_url }}
-            <p><a href="{{ . }}" class="btn btn-default">Tickets — {{ $.Params.ticket_price }}</a></p>
           {{ end }}
 
           <hr>
           {{ .Content }}
+	  
+          {{ with .Params.beers }}
+            <hr>
+            <div class="awards">
+              <h3>Beers Poured</h3>
+              <ul class="awards-list">
+                {{ range . }}
+                  {{ $slug := . }}
+                  {{ $beer := site.GetPage (printf "beers/%s" $slug) }}
+                  {{ if $beer }}
+                    <li><a href="{{ $beer.Permalink }}">{{ $beer.Title }}</a></li>
+                  {{ else }}
+                    <li>{{ $slug }}</li>
+                  {{ end }}
+                {{ end }}
+              </ul>
+            </div>
+          {{ end }}
 
         </div></div>
-
-        {{ with .Params.beers }}
-          <hr>
-          <div class="awards">
-            <h3>Beers Being Poured</h3>
-            <ul class="awards-list">
-              {{ range . }}
-                {{ $slug := . }}
-                {{ $beer := site.GetPage (printf "beers/%s" $slug) }}
-                {{ if $beer }}
-                  <li><a href="{{ $beer.Permalink }}">{{ $beer.Title }}</a></li>
-                {{ else }}
-                  <li>{{ $slug }}</li>
-                {{ end }}
-              {{ end }}
-            </ul>
-          </div>
-        {{ end }}
 
       </article>
     </div>

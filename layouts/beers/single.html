@@ -35,17 +35,6 @@
            <hr>
            {{ .Content }}
 
-           {{ if .Params.festivals }}
-            <hr>
-            <div class="awards">
-              <h3>Festival Appearances</h3>
-            <ul class="awards-list">
-              {{ range .Params.festivals }}
-              <li>{{ . }}
-                {{ end }}
-            </ul></div>
-          {{ end }}
-
            {{ with .Params.awards }}
             <hr>
             <div class="awards">Awards</div>
@@ -60,24 +49,21 @@
             {{ end }}
            {{ end }}
 
-           {{ $beerSlug := .File.BaseFileName }}
+           {{ $beerSlug := .File.ContentBaseName }}
            {{ $beerEvents := slice }}
-           {{ range site.Sections }}
-             {{ if eq .Section "events" }}
-               {{ range .RegularPages }}
-                 {{ if in .Params.beers $beerSlug }}
-                   {{ $beerEvents = $beerEvents | append . }}
-                 {{ end }}
-               {{ end }}
+           {{ range where site.RegularPages "Section" "events" }}
+             {{ if in .Params.beers $beerSlug }}
+               {{ $beerEvents = $beerEvents | append . }}
              {{ end }}
            {{ end }}
+
            {{ with $beerEvents }}
             <hr>
             <div class="awards">
               <h3>Event Appearances</h3>
               <ul class="awards-list">
-                {{ range sort . "Date" "desc" }}
-                  <li><a href="{{ .Permalink }}">{{ .Title }}</a> — {{ .Date.Format "January 2, 2006" }}</li>
+                {{ range sort . "Params.date" "desc" }}
+                  <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
                 {{ end }}
               </ul>
             </div>

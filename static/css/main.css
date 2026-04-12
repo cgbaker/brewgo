@@ -12,7 +12,23 @@
 
 @font-face {
   font-family: 'Dh Kelia';
-  src: url('/fonts/dh-kellia.otf') format('opentype');
+  src: url('/fonts/DhKellia-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dh Kelia Bold';
+  src: url('/fonts/DhKellia-Bold.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dh Kelia Light';
+  src: url('/fonts/DhKellia-Light.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -509,6 +525,7 @@ footer div.disclaimer {
 }
 .intro-header.big-img .container,
 .intro-header.big-img .page-heading,
+.intro-header.big-img .events-heading,
 .intro-header.big-img .beers-heading,
 .intro-header.big-img .post-heading {
   position: relative;
@@ -530,11 +547,14 @@ footer div.disclaimer {
 }
 .intro-header .page-heading,
 .intro-header .tags-heading,
+.intro-header .events-heading,
+.intro-header .post-heading,
 .intro-header .beers-heading,
 .intro-header .categories-heading {
   text-align: center;
 }
 .intro-header.big-img .page-heading,
+.intro-header.big-img .events-heading,
 .intro-header.big-img .beers-heading,
 .intro-header.big-img .post-heading {
   padding: 30px 0;
@@ -542,6 +562,8 @@ footer div.disclaimer {
   text-shadow: 1px 1px 3px #000;
 }
 .intro-header .page-heading h1,
+.intro-header .events-heading h1,
+.intro-header .post-heading h1,
 .intro-header .beers-heading h1,
 .intro-header .tags-heading h1,
 .intro-header .categories-heading h1 {
@@ -553,6 +575,7 @@ footer div.disclaimer {
   font-size: 35px;
 }
 .intro-header .page-heading h1,
+.intro-header .events-heading h1,
 .intro-header .beers-heading h1,
 .intro-header .tags-heading h1,
 .intro-header .categories-heading h1,
@@ -563,6 +586,7 @@ footer div.disclaimer {
   line-height: 1; /* Equivalent to 1pt line spacing in design tools */
 }
 .intro-header .page-heading .page-subheading,
+.intro-header .events-heading .events-subheading,
 .intro-header .beers-heading .beers-subheading,
 .intro-header .post-heading .post-subheading {
   font-size: 27px;
@@ -576,11 +600,14 @@ footer div.disclaimer {
   margin-bottom: 20px;
 }
 .intro-header.big-img .page-heading .page-subheading,
+.intro-header.big-img .events-heading .events-subheading,
 .intro-header.big-img .beers-heading .beers-subheading,
 .intro-header.big-img .post-heading .post-subheading {
   font-weight: 400;
 }
 .intro-header.big-img .page-heading hr,
+.intro-header.big-img .events-heading hr,
+.intro-header.big-img .post-heading hr,
 .intro-header.big-img .beers-heading hr {
   box-shadow: 1px 1px 3px #000;
   -webkit-box-shadow: 1px 1px 3px #000;
@@ -608,18 +635,18 @@ footer div.disclaimer {
     margin-top: 91px;  /* Full navbar is small navbar + 20px padding on each side when expanded */
   }
   .intro-header.big-img .page-heading,
+  .intro-header.big-img .events-heading,
   .intro-header.big-img .beers-heading,
   .intro-header.big-img .post-heading  {
     padding: 50px 0;
   }
   .intro-header .page-heading h1,
+  .intro-header .events-heading h1,
+  .intro-header .post-heading h1,
   .intro-header .beers-heading h1,
   .intro-header .tags-heading h1,
   .intro-header .categories-heading h1 {
     font-size: 80px;
-  }
-  .intro-header .post-heading h1 {
-    font-size: 50px;
   }
   .intro-header.big-img .img-desc {
     font-size: 14px;
@@ -646,6 +673,7 @@ footer div.disclaimer {
     height: 220px;
   }
   .intro-header.big-img .page-heading,
+  .intro-header.big-img .events-heading,
   .intro-header.big-img .beers-heading,
   .intro-header.big-img .post-heading {
     display: none;
@@ -692,8 +720,8 @@ footer div.disclaimer {
 .pager li a:hover,
 .pager li a:focus {
   color: #FFF;
-  background: #0085a1;
-  border: 1px solid #0085a1;
+  background: var(--midnight);
+  border: 1px solid var(--midnight);
 }
 
 .pager {
